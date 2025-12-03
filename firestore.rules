@@ -1,0 +1,62 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Match documents in the 'users' collection
+    match /users/{userId} {
+      allow write: if request.auth != null && request.auth.uid == userId;
+      allow read: if request.auth != null;
+    }
+
+    // Admin-only collections
+    match /influencers/{document=**} {
+      allow read, write: if request.auth != null && request.auth.token.email == 'fluency400533@gmail.com';
+    }
+
+    match /campaigns/{document=**} {
+      // Admin can do everything
+      allow create, delete: if request.auth != null && request.auth.token.email == 'fluency400533@gmail.com';
+      
+      // Admin can read/write
+      allow read: if request.auth != null && request.auth.token.email == 'fluency400533@gmail.com';
+      
+      // Client Portal Access:
+      // Allow READ if query filters by shareToken (handled by 'list' rule? No, 'get' rule).
+      // Actually, for 'get', we can't easily check the query params. 
+      // But we can allow 'get' if the document exists (public read? No, that exposes everything).
+      // We want to allow reading ONE campaign if you know the shareToken.
+      // Firestore rules don't support "allow read if you know a field value" directly for a single doc fetch unless you query for it.
+      // But CampaignService.getCampaignByToken uses a Query.
+      allow list: if resource.data.shareToken == request.query.shareToken;
+      
+      // Allow UPDATE if the existing doc's shareToken matches the one provided in the request? 
+      // Or just if the shareToken is not being modified and exists.
+      // A simpler approach for the portal: Allow update if the request includes the correct shareToken in the data?
+      // No, the portal doesn't send the shareToken in the update payload usually.
+      // Let's rely on the fact that the user has the link.
+      // We will allow update if the resource has a 'shareToken' field and the user is NOT modifying it.
+      // AND we might want to restrict WHICH fields they can update (status, clientNotes).
+      allow update: if (request.auth != null && request.auth.token.email == 'fluency400533@gmail.com') || 
+                    (resource.data.shareToken != null && 
+                     request.resource.data.shareToken == resource.data.shareToken &&
+                     request.resource.data.diff(resource.data).affectedKeys().hasOnly(['influencers']));
+    }
+
+    // AI Cache collections
+    match /ai_creator_verifications/{document=**} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null; // Should be restricted to server-side or admin
+    }
+    
+    match /ai_audience_analyses/{document=**} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    // Default: Deny access to all other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,2630 @@
+"""
+✨ `Campaign_KeyOutput` returns the primary key fields of table type `Campaign`.
+
+It has the same format as `Campaign_Key`, but is only used as mutation return value.
+"""
+scalar Campaign_KeyOutput
+"""
+✨ `CreatorProfile_KeyOutput` returns the primary key fields of table type `CreatorProfile`.
+
+It has the same format as `CreatorProfile_Key`, but is only used as mutation return value.
+"""
+scalar CreatorProfile_KeyOutput
+"""
+✨ `Interaction_KeyOutput` returns the primary key fields of table type `Interaction`.
+
+It has the same format as `Interaction_Key`, but is only used as mutation return value.
+"""
+scalar Interaction_KeyOutput
+"""
+✨ `Lead_KeyOutput` returns the primary key fields of table type `Lead`.
+
+It has the same format as `Lead_Key`, but is only used as mutation return value.
+"""
+scalar Lead_KeyOutput
+"""
+✨ `User_KeyOutput` returns the primary key fields of table type `User`.
+
+It has the same format as `User_Key`, but is only used as mutation return value.
+"""
+scalar User_KeyOutput
+"""
+✨ `VerificationScan_KeyOutput` returns the primary key fields of table type `VerificationScan`.
+
+It has the same format as `VerificationScan_Key`, but is only used as mutation return value.
+"""
+scalar VerificationScan_KeyOutput
+"""
+✨ Generated data input type for table 'Campaign'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Campaign_Data {
+  """
+  ✨ Generated from Field `Campaign`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Campaign`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Campaign`.`clientId` of type `UUID!`
+  """
+  clientId: UUID
+  """
+  ✨ `_expr` server value variant of `clientId` (✨ Generated from Field `Campaign`.`clientId` of type `UUID!`)
+  """
+  clientId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Campaign`.`creatorId` of type `UUID`
+  """
+  creatorId: UUID
+  """
+  ✨ `_expr` server value variant of `creatorId` (✨ Generated from Field `Campaign`.`creatorId` of type `UUID`)
+  """
+  creatorId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Campaign`.`client` of type `User!`
+  """
+  client: User_Key
+  """
+  ✨ Generated from Field `Campaign`.`creator` of type `CreatorProfile`
+  """
+  creator: CreatorProfile_Key
+  """
+  ✨ Generated from Field `Campaign`.`budgetProposed` of type `Float!`
+  """
+  budgetProposed: Float
+  """
+  ✨ `_expr` server value variant of `budgetProposed` (✨ Generated from Field `Campaign`.`budgetProposed` of type `Float!`)
+  """
+  budgetProposed_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `budgetProposed` (✨ Generated from Field `Campaign`.`budgetProposed` of type `Float!`)
+  """
+  budgetProposed_update: [Float_Update!]
+  """
+  ✨ Generated from Field `Campaign`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Campaign`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Campaign`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Campaign`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Campaign`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `Campaign`.`description` of type `String`)
+  """
+  description_expr: String_Expr
+  """
+  ✨ Generated from Field `Campaign`.`endDate` of type `Date`
+  """
+  endDate: Date
+  """
+  ✨ `_date` server value variant of `endDate` (✨ Generated from Field `Campaign`.`endDate` of type `Date`)
+  """
+  endDate_date: Date_Relative
+  """
+  ✨ `_expr` server value variant of `endDate` (✨ Generated from Field `Campaign`.`endDate` of type `Date`)
+  """
+  endDate_expr: Date_Expr
+  """
+  ✨ `_update` server value variant of `endDate` (✨ Generated from Field `Campaign`.`endDate` of type `Date`)
+  """
+  endDate_update: [Date_Update!]
+  """
+  ✨ Generated from Field `Campaign`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `Campaign`.`name` of type `String!`)
+  """
+  name_expr: String_Expr
+  """
+  ✨ Generated from Field `Campaign`.`notes` of type `String`
+  """
+  notes: String
+  """
+  ✨ `_expr` server value variant of `notes` (✨ Generated from Field `Campaign`.`notes` of type `String`)
+  """
+  notes_expr: String_Expr
+  """
+  ✨ Generated from Field `Campaign`.`startDate` of type `Date`
+  """
+  startDate: Date
+  """
+  ✨ `_date` server value variant of `startDate` (✨ Generated from Field `Campaign`.`startDate` of type `Date`)
+  """
+  startDate_date: Date_Relative
+  """
+  ✨ `_expr` server value variant of `startDate` (✨ Generated from Field `Campaign`.`startDate` of type `Date`)
+  """
+  startDate_expr: Date_Expr
+  """
+  ✨ `_update` server value variant of `startDate` (✨ Generated from Field `Campaign`.`startDate` of type `Date`)
+  """
+  startDate_update: [Date_Update!]
+  """
+  ✨ Generated from Field `Campaign`.`status` of type `String!`
+  """
+  status: String
+  """
+  ✨ `_expr` server value variant of `status` (✨ Generated from Field `Campaign`.`status` of type `String!`)
+  """
+  status_expr: String_Expr
+  """
+  ✨ Generated from Field `Campaign`.`targetAudience` of type `String`
+  """
+  targetAudience: String
+  """
+  ✨ `_expr` server value variant of `targetAudience` (✨ Generated from Field `Campaign`.`targetAudience` of type `String`)
+  """
+  targetAudience_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'Campaign'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Campaign_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Campaign_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Campaign_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Campaign_Filter!]
+  """
+  ✨ Generated from Field `Campaign`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Campaign`.`clientId` of type `UUID!`
+  """
+  clientId: UUID_Filter
+  """
+  ✨ Generated from Field `Campaign`.`creatorId` of type `UUID`
+  """
+  creatorId: UUID_Filter
+  """
+  ✨ Generated from Field `Campaign`.`client` of type `User!`
+  """
+  client: User_Filter
+  """
+  ✨ Generated from Field `Campaign`.`creator` of type `CreatorProfile`
+  """
+  creator: CreatorProfile_Filter
+  """
+  ✨ Generated from Field `Campaign`.`budgetProposed` of type `Float!`
+  """
+  budgetProposed: Float_Filter
+  """
+  ✨ Generated from Field `Campaign`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Campaign`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `Campaign`.`endDate` of type `Date`
+  """
+  endDate: Date_Filter
+  """
+  ✨ Generated from Field `Campaign`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `Campaign`.`notes` of type `String`
+  """
+  notes: String_Filter
+  """
+  ✨ Generated from Field `Campaign`.`startDate` of type `Date`
+  """
+  startDate: Date_Filter
+  """
+  ✨ Generated from Field `Campaign`.`status` of type `String!`
+  """
+  status: String_Filter
+  """
+  ✨ Generated from Field `Campaign`.`targetAudience` of type `String`
+  """
+  targetAudience: String_Filter
+  """
+  ✨ Generated from Field `Campaign`.`interactions_on_campaign` of type `[Interaction!]!`
+  """
+  interactions_on_campaign: Interaction_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'Campaign'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Campaign_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Campaign_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Campaign_Filter
+}
+"""
+✨ Generated having input type for table 'Campaign'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Campaign_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Campaign_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Campaign_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Campaign_Having!]
+  """
+  ✨ Generated from Field `Campaign`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Campaign`.`budgetProposed_count` of type `Int!`
+  """
+  budgetProposed_count: Int_Filter
+  """
+  ✨ Generated from Field `Campaign`.`clientId_count` of type `Int!`
+  """
+  clientId_count: Int_Filter
+  """
+  ✨ Generated from Field `Campaign`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Campaign`.`creatorId_count` of type `Int!`
+  """
+  creatorId_count: Int_Filter
+  """
+  ✨ Generated from Field `Campaign`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Campaign`.`endDate_count` of type `Int!`
+  """
+  endDate_count: Int_Filter
+  """
+  ✨ Generated from Field `Campaign`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Campaign`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `Campaign`.`notes_count` of type `Int!`
+  """
+  notes_count: Int_Filter
+  """
+  ✨ Generated from Field `Campaign`.`startDate_count` of type `Int!`
+  """
+  startDate_count: Int_Filter
+  """
+  ✨ Generated from Field `Campaign`.`status_count` of type `Int!`
+  """
+  status_count: Int_Filter
+  """
+  ✨ Generated from Field `Campaign`.`targetAudience_count` of type `Int!`
+  """
+  targetAudience_count: Int_Filter
+  """
+  ✨ Generated from Field `Campaign`.`budgetProposed_sum` of type `Float`
+  """
+  budgetProposed_sum: Float_Filter
+  """
+  ✨ Generated from Field `Campaign`.`budgetProposed_avg` of type `Float`
+  """
+  budgetProposed_avg: Float_Filter
+  """
+  ✨ Generated from Field `Campaign`.`budgetProposed_min` of type `Float`
+  """
+  budgetProposed_min: Float_Filter
+  """
+  ✨ Generated from Field `Campaign`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Campaign`.`endDate_min` of type `Date`
+  """
+  endDate_min: Date_Filter
+  """
+  ✨ Generated from Field `Campaign`.`startDate_min` of type `Date`
+  """
+  startDate_min: Date_Filter
+  """
+  ✨ Generated from Field `Campaign`.`budgetProposed_max` of type `Float`
+  """
+  budgetProposed_max: Float_Filter
+  """
+  ✨ Generated from Field `Campaign`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Campaign`.`endDate_max` of type `Date`
+  """
+  endDate_max: Date_Filter
+  """
+  ✨ Generated from Field `Campaign`.`startDate_max` of type `Date`
+  """
+  startDate_max: Date_Filter
+}
+"""
+✨ Generated key input type for table 'Campaign'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Campaign_Key {
+  """
+  ✨ Generated from Field `Campaign`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Campaign`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'Campaign'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Campaign_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Campaign_Filter
+}
+"""
+✨ Generated order input type for table 'Campaign'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Campaign_Order {
+  """
+  ✨ Generated from Field `Campaign`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`clientId` of type `UUID!`
+  """
+  clientId: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`creatorId` of type `UUID`
+  """
+  creatorId: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`client` of type `User!`
+  """
+  client: User_Order
+  """
+  ✨ Generated from Field `Campaign`.`creator` of type `CreatorProfile`
+  """
+  creator: CreatorProfile_Order
+  """
+  ✨ Generated from Field `Campaign`.`budgetProposed` of type `Float!`
+  """
+  budgetProposed: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`endDate` of type `Date`
+  """
+  endDate: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`notes` of type `String`
+  """
+  notes: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`startDate` of type `Date`
+  """
+  startDate: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`status` of type `String!`
+  """
+  status: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`targetAudience` of type `String`
+  """
+  targetAudience: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`budgetProposed_count` of type `Int!`
+  """
+  budgetProposed_count: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`clientId_count` of type `Int!`
+  """
+  clientId_count: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`creatorId_count` of type `Int!`
+  """
+  creatorId_count: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`endDate_count` of type `Int!`
+  """
+  endDate_count: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`notes_count` of type `Int!`
+  """
+  notes_count: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`startDate_count` of type `Int!`
+  """
+  startDate_count: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`status_count` of type `Int!`
+  """
+  status_count: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`targetAudience_count` of type `Int!`
+  """
+  targetAudience_count: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`budgetProposed_sum` of type `Float`
+  """
+  budgetProposed_sum: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`budgetProposed_avg` of type `Float`
+  """
+  budgetProposed_avg: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`budgetProposed_min` of type `Float`
+  """
+  budgetProposed_min: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`endDate_min` of type `Date`
+  """
+  endDate_min: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`startDate_min` of type `Date`
+  """
+  startDate_min: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`budgetProposed_max` of type `Float`
+  """
+  budgetProposed_max: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`endDate_max` of type `Date`
+  """
+  endDate_max: OrderDirection
+  """
+  ✨ Generated from Field `Campaign`.`startDate_max` of type `Date`
+  """
+  startDate_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'CreatorProfile'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input CreatorProfile_Data {
+  """
+  ✨ Generated from Field `CreatorProfile`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `CreatorProfile`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `CreatorProfile`.`userId` of type `UUID!`
+  """
+  userId: UUID
+  """
+  ✨ `_expr` server value variant of `userId` (✨ Generated from Field `CreatorProfile`.`userId` of type `UUID!`)
+  """
+  userId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `CreatorProfile`.`user` of type `User!`
+  """
+  user: User_Key
+  """
+  ✨ Generated from Field `CreatorProfile`.`audienceQualityScore` of type `Float!`
+  """
+  audienceQualityScore: Float
+  """
+  ✨ `_expr` server value variant of `audienceQualityScore` (✨ Generated from Field `CreatorProfile`.`audienceQualityScore` of type `Float!`)
+  """
+  audienceQualityScore_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `audienceQualityScore` (✨ Generated from Field `CreatorProfile`.`audienceQualityScore` of type `Float!`)
+  """
+  audienceQualityScore_update: [Float_Update!]
+  """
+  ✨ Generated from Field `CreatorProfile`.`bio` of type `String`
+  """
+  bio: String
+  """
+  ✨ `_expr` server value variant of `bio` (✨ Generated from Field `CreatorProfile`.`bio` of type `String`)
+  """
+  bio_expr: String_Expr
+  """
+  ✨ Generated from Field `CreatorProfile`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `CreatorProfile`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `CreatorProfile`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `CreatorProfile`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `CreatorProfile`.`engagementRate` of type `Float`
+  """
+  engagementRate: Float
+  """
+  ✨ `_expr` server value variant of `engagementRate` (✨ Generated from Field `CreatorProfile`.`engagementRate` of type `Float`)
+  """
+  engagementRate_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `engagementRate` (✨ Generated from Field `CreatorProfile`.`engagementRate` of type `Float`)
+  """
+  engagementRate_update: [Float_Update!]
+  """
+  ✨ Generated from Field `CreatorProfile`.`followerCount` of type `Int!`
+  """
+  followerCount: Int
+  """
+  ✨ `_expr` server value variant of `followerCount` (✨ Generated from Field `CreatorProfile`.`followerCount` of type `Int!`)
+  """
+  followerCount_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `followerCount` (✨ Generated from Field `CreatorProfile`.`followerCount` of type `Int!`)
+  """
+  followerCount_update: [Int_Update!]
+  """
+  ✨ Generated from Field `CreatorProfile`.`geoTargetingData` of type `String`
+  """
+  geoTargetingData: String
+  """
+  ✨ `_expr` server value variant of `geoTargetingData` (✨ Generated from Field `CreatorProfile`.`geoTargetingData` of type `String`)
+  """
+  geoTargetingData_expr: String_Expr
+  """
+  ✨ Generated from Field `CreatorProfile`.`niche` of type `String`
+  """
+  niche: String
+  """
+  ✨ `_expr` server value variant of `niche` (✨ Generated from Field `CreatorProfile`.`niche` of type `String`)
+  """
+  niche_expr: String_Expr
+  """
+  ✨ Generated from Field `CreatorProfile`.`profilePictureURL` of type `String`
+  """
+  profilePictureURL: String
+  """
+  ✨ `_expr` server value variant of `profilePictureURL` (✨ Generated from Field `CreatorProfile`.`profilePictureURL` of type `String`)
+  """
+  profilePictureURL_expr: String_Expr
+  """
+  ✨ Generated from Field `CreatorProfile`.`socialMediaPlatform` of type `String!`
+  """
+  socialMediaPlatform: String
+  """
+  ✨ `_expr` server value variant of `socialMediaPlatform` (✨ Generated from Field `CreatorProfile`.`socialMediaPlatform` of type `String!`)
+  """
+  socialMediaPlatform_expr: String_Expr
+  """
+  ✨ Generated from Field `CreatorProfile`.`username` of type `String!`
+  """
+  username: String
+  """
+  ✨ `_expr` server value variant of `username` (✨ Generated from Field `CreatorProfile`.`username` of type `String!`)
+  """
+  username_expr: String_Expr
+  """
+  ✨ Generated from Field `CreatorProfile`.`verificationStatus` of type `String!`
+  """
+  verificationStatus: String
+  """
+  ✨ `_expr` server value variant of `verificationStatus` (✨ Generated from Field `CreatorProfile`.`verificationStatus` of type `String!`)
+  """
+  verificationStatus_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'CreatorProfile'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input CreatorProfile_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [CreatorProfile_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: CreatorProfile_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [CreatorProfile_Filter!]
+  """
+  ✨ Generated from Field `CreatorProfile`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`userId` of type `UUID!`
+  """
+  userId: UUID_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`user` of type `User!`
+  """
+  user: User_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`audienceQualityScore` of type `Float!`
+  """
+  audienceQualityScore: Float_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`bio` of type `String`
+  """
+  bio: String_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`engagementRate` of type `Float`
+  """
+  engagementRate: Float_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`followerCount` of type `Int!`
+  """
+  followerCount: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`geoTargetingData` of type `String`
+  """
+  geoTargetingData: String_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`niche` of type `String`
+  """
+  niche: String_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`profilePictureURL` of type `String`
+  """
+  profilePictureURL: String_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`socialMediaPlatform` of type `String!`
+  """
+  socialMediaPlatform: String_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`username` of type `String!`
+  """
+  username: String_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`verificationStatus` of type `String!`
+  """
+  verificationStatus: String_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`campaigns_on_creator` of type `[Campaign!]!`
+  """
+  campaigns_on_creator: Campaign_ListFilter
+  """
+  ✨ Generated from Field `CreatorProfile`.`verificationScans_on_creatorProfile` of type `[VerificationScan!]!`
+  """
+  verificationScans_on_creatorProfile: VerificationScan_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'CreatorProfile'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input CreatorProfile_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [CreatorProfile_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: CreatorProfile_Filter
+}
+"""
+✨ Generated having input type for table 'CreatorProfile'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input CreatorProfile_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [CreatorProfile_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: CreatorProfile_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [CreatorProfile_Having!]
+  """
+  ✨ Generated from Field `CreatorProfile`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`audienceQualityScore_count` of type `Int!`
+  """
+  audienceQualityScore_count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`bio_count` of type `Int!`
+  """
+  bio_count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`engagementRate_count` of type `Int!`
+  """
+  engagementRate_count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`followerCount_count` of type `Int!`
+  """
+  followerCount_count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`geoTargetingData_count` of type `Int!`
+  """
+  geoTargetingData_count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`niche_count` of type `Int!`
+  """
+  niche_count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`profilePictureURL_count` of type `Int!`
+  """
+  profilePictureURL_count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`socialMediaPlatform_count` of type `Int!`
+  """
+  socialMediaPlatform_count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`userId_count` of type `Int!`
+  """
+  userId_count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`username_count` of type `Int!`
+  """
+  username_count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`verificationStatus_count` of type `Int!`
+  """
+  verificationStatus_count: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`audienceQualityScore_sum` of type `Float`
+  """
+  audienceQualityScore_sum: Float_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`engagementRate_sum` of type `Float`
+  """
+  engagementRate_sum: Float_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`followerCount_sum` of type `Int`
+  """
+  followerCount_sum: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`audienceQualityScore_avg` of type `Float`
+  """
+  audienceQualityScore_avg: Float_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`engagementRate_avg` of type `Float`
+  """
+  engagementRate_avg: Float_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`followerCount_avg` of type `Float`
+  """
+  followerCount_avg: Float_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`audienceQualityScore_min` of type `Float`
+  """
+  audienceQualityScore_min: Float_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`engagementRate_min` of type `Float`
+  """
+  engagementRate_min: Float_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`followerCount_min` of type `Int`
+  """
+  followerCount_min: Int_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`audienceQualityScore_max` of type `Float`
+  """
+  audienceQualityScore_max: Float_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`engagementRate_max` of type `Float`
+  """
+  engagementRate_max: Float_Filter
+  """
+  ✨ Generated from Field `CreatorProfile`.`followerCount_max` of type `Int`
+  """
+  followerCount_max: Int_Filter
+}
+"""
+✨ Generated key input type for table 'CreatorProfile'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input CreatorProfile_Key {
+  """
+  ✨ Generated from Field `CreatorProfile`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `CreatorProfile`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'CreatorProfile'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input CreatorProfile_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: CreatorProfile_Filter
+}
+"""
+✨ Generated order input type for table 'CreatorProfile'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input CreatorProfile_Order {
+  """
+  ✨ Generated from Field `CreatorProfile`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`userId` of type `UUID!`
+  """
+  userId: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`user` of type `User!`
+  """
+  user: User_Order
+  """
+  ✨ Generated from Field `CreatorProfile`.`audienceQualityScore` of type `Float!`
+  """
+  audienceQualityScore: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`bio` of type `String`
+  """
+  bio: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`engagementRate` of type `Float`
+  """
+  engagementRate: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`followerCount` of type `Int!`
+  """
+  followerCount: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`geoTargetingData` of type `String`
+  """
+  geoTargetingData: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`niche` of type `String`
+  """
+  niche: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`profilePictureURL` of type `String`
+  """
+  profilePictureURL: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`socialMediaPlatform` of type `String!`
+  """
+  socialMediaPlatform: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`username` of type `String!`
+  """
+  username: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`verificationStatus` of type `String!`
+  """
+  verificationStatus: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`audienceQualityScore_count` of type `Int!`
+  """
+  audienceQualityScore_count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`bio_count` of type `Int!`
+  """
+  bio_count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`engagementRate_count` of type `Int!`
+  """
+  engagementRate_count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`followerCount_count` of type `Int!`
+  """
+  followerCount_count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`geoTargetingData_count` of type `Int!`
+  """
+  geoTargetingData_count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`niche_count` of type `Int!`
+  """
+  niche_count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`profilePictureURL_count` of type `Int!`
+  """
+  profilePictureURL_count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`socialMediaPlatform_count` of type `Int!`
+  """
+  socialMediaPlatform_count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`userId_count` of type `Int!`
+  """
+  userId_count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`username_count` of type `Int!`
+  """
+  username_count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`verificationStatus_count` of type `Int!`
+  """
+  verificationStatus_count: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`audienceQualityScore_sum` of type `Float`
+  """
+  audienceQualityScore_sum: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`engagementRate_sum` of type `Float`
+  """
+  engagementRate_sum: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`followerCount_sum` of type `Int`
+  """
+  followerCount_sum: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`audienceQualityScore_avg` of type `Float`
+  """
+  audienceQualityScore_avg: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`engagementRate_avg` of type `Float`
+  """
+  engagementRate_avg: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`followerCount_avg` of type `Float`
+  """
+  followerCount_avg: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`audienceQualityScore_min` of type `Float`
+  """
+  audienceQualityScore_min: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`engagementRate_min` of type `Float`
+  """
+  engagementRate_min: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`followerCount_min` of type `Int`
+  """
+  followerCount_min: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`audienceQualityScore_max` of type `Float`
+  """
+  audienceQualityScore_max: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`engagementRate_max` of type `Float`
+  """
+  engagementRate_max: OrderDirection
+  """
+  ✨ Generated from Field `CreatorProfile`.`followerCount_max` of type `Int`
+  """
+  followerCount_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Interaction'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Interaction_Data {
+  """
+  ✨ Generated from Field `Interaction`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Interaction`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Interaction`.`campaignId` of type `UUID`
+  """
+  campaignId: UUID
+  """
+  ✨ `_expr` server value variant of `campaignId` (✨ Generated from Field `Interaction`.`campaignId` of type `UUID`)
+  """
+  campaignId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Interaction`.`leadId` of type `UUID`
+  """
+  leadId: UUID
+  """
+  ✨ `_expr` server value variant of `leadId` (✨ Generated from Field `Interaction`.`leadId` of type `UUID`)
+  """
+  leadId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Interaction`.`userId` of type `UUID`
+  """
+  userId: UUID
+  """
+  ✨ `_expr` server value variant of `userId` (✨ Generated from Field `Interaction`.`userId` of type `UUID`)
+  """
+  userId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Interaction`.`campaign` of type `Campaign`
+  """
+  campaign: Campaign_Key
+  """
+  ✨ Generated from Field `Interaction`.`lead` of type `Lead`
+  """
+  lead: Lead_Key
+  """
+  ✨ Generated from Field `Interaction`.`user` of type `User`
+  """
+  user: User_Key
+  """
+  ✨ Generated from Field `Interaction`.`associatedAgent` of type `String`
+  """
+  associatedAgent: String
+  """
+  ✨ `_expr` server value variant of `associatedAgent` (✨ Generated from Field `Interaction`.`associatedAgent` of type `String`)
+  """
+  associatedAgent_expr: String_Expr
+  """
+  ✨ Generated from Field `Interaction`.`content` of type `String!`
+  """
+  content: String
+  """
+  ✨ `_expr` server value variant of `content` (✨ Generated from Field `Interaction`.`content` of type `String!`)
+  """
+  content_expr: String_Expr
+  """
+  ✨ Generated from Field `Interaction`.`extractedData` of type `String`
+  """
+  extractedData: String
+  """
+  ✨ `_expr` server value variant of `extractedData` (✨ Generated from Field `Interaction`.`extractedData` of type `String`)
+  """
+  extractedData_expr: String_Expr
+  """
+  ✨ Generated from Field `Interaction`.`timestamp` of type `Timestamp!`
+  """
+  timestamp: Timestamp
+  """
+  ✨ `_expr` server value variant of `timestamp` (✨ Generated from Field `Interaction`.`timestamp` of type `Timestamp!`)
+  """
+  timestamp_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `timestamp` (✨ Generated from Field `Interaction`.`timestamp` of type `Timestamp!`)
+  """
+  timestamp_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `timestamp` (✨ Generated from Field `Interaction`.`timestamp` of type `Timestamp!`)
+  """
+  timestamp_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Interaction`.`type` of type `String!`
+  """
+  type: String
+  """
+  ✨ `_expr` server value variant of `type` (✨ Generated from Field `Interaction`.`type` of type `String!`)
+  """
+  type_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'Interaction'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Interaction_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Interaction_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Interaction_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Interaction_Filter!]
+  """
+  ✨ Generated from Field `Interaction`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Interaction`.`campaignId` of type `UUID`
+  """
+  campaignId: UUID_Filter
+  """
+  ✨ Generated from Field `Interaction`.`leadId` of type `UUID`
+  """
+  leadId: UUID_Filter
+  """
+  ✨ Generated from Field `Interaction`.`userId` of type `UUID`
+  """
+  userId: UUID_Filter
+  """
+  ✨ Generated from Field `Interaction`.`campaign` of type `Campaign`
+  """
+  campaign: Campaign_Filter
+  """
+  ✨ Generated from Field `Interaction`.`lead` of type `Lead`
+  """
+  lead: Lead_Filter
+  """
+  ✨ Generated from Field `Interaction`.`user` of type `User`
+  """
+  user: User_Filter
+  """
+  ✨ Generated from Field `Interaction`.`associatedAgent` of type `String`
+  """
+  associatedAgent: String_Filter
+  """
+  ✨ Generated from Field `Interaction`.`content` of type `String!`
+  """
+  content: String_Filter
+  """
+  ✨ Generated from Field `Interaction`.`extractedData` of type `String`
+  """
+  extractedData: String_Filter
+  """
+  ✨ Generated from Field `Interaction`.`timestamp` of type `Timestamp!`
+  """
+  timestamp: Timestamp_Filter
+  """
+  ✨ Generated from Field `Interaction`.`type` of type `String!`
+  """
+  type: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'Interaction'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Interaction_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Interaction_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Interaction_Filter
+}
+"""
+✨ Generated having input type for table 'Interaction'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Interaction_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Interaction_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Interaction_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Interaction_Having!]
+  """
+  ✨ Generated from Field `Interaction`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Interaction`.`associatedAgent_count` of type `Int!`
+  """
+  associatedAgent_count: Int_Filter
+  """
+  ✨ Generated from Field `Interaction`.`campaignId_count` of type `Int!`
+  """
+  campaignId_count: Int_Filter
+  """
+  ✨ Generated from Field `Interaction`.`content_count` of type `Int!`
+  """
+  content_count: Int_Filter
+  """
+  ✨ Generated from Field `Interaction`.`extractedData_count` of type `Int!`
+  """
+  extractedData_count: Int_Filter
+  """
+  ✨ Generated from Field `Interaction`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Interaction`.`leadId_count` of type `Int!`
+  """
+  leadId_count: Int_Filter
+  """
+  ✨ Generated from Field `Interaction`.`timestamp_count` of type `Int!`
+  """
+  timestamp_count: Int_Filter
+  """
+  ✨ Generated from Field `Interaction`.`type_count` of type `Int!`
+  """
+  type_count: Int_Filter
+  """
+  ✨ Generated from Field `Interaction`.`userId_count` of type `Int!`
+  """
+  userId_count: Int_Filter
+  """
+  ✨ Generated from Field `Interaction`.`timestamp_min` of type `Timestamp`
+  """
+  timestamp_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Interaction`.`timestamp_max` of type `Timestamp`
+  """
+  timestamp_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'Interaction'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Interaction_Key {
+  """
+  ✨ Generated from Field `Interaction`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Interaction`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'Interaction'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Interaction_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Interaction_Filter
+}
+"""
+✨ Generated order input type for table 'Interaction'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Interaction_Order {
+  """
+  ✨ Generated from Field `Interaction`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`campaignId` of type `UUID`
+  """
+  campaignId: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`leadId` of type `UUID`
+  """
+  leadId: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`userId` of type `UUID`
+  """
+  userId: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`campaign` of type `Campaign`
+  """
+  campaign: Campaign_Order
+  """
+  ✨ Generated from Field `Interaction`.`lead` of type `Lead`
+  """
+  lead: Lead_Order
+  """
+  ✨ Generated from Field `Interaction`.`user` of type `User`
+  """
+  user: User_Order
+  """
+  ✨ Generated from Field `Interaction`.`associatedAgent` of type `String`
+  """
+  associatedAgent: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`content` of type `String!`
+  """
+  content: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`extractedData` of type `String`
+  """
+  extractedData: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`timestamp` of type `Timestamp!`
+  """
+  timestamp: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`type` of type `String!`
+  """
+  type: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`associatedAgent_count` of type `Int!`
+  """
+  associatedAgent_count: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`campaignId_count` of type `Int!`
+  """
+  campaignId_count: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`content_count` of type `Int!`
+  """
+  content_count: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`extractedData_count` of type `Int!`
+  """
+  extractedData_count: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`leadId_count` of type `Int!`
+  """
+  leadId_count: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`timestamp_count` of type `Int!`
+  """
+  timestamp_count: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`type_count` of type `Int!`
+  """
+  type_count: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`userId_count` of type `Int!`
+  """
+  userId_count: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`timestamp_min` of type `Timestamp`
+  """
+  timestamp_min: OrderDirection
+  """
+  ✨ Generated from Field `Interaction`.`timestamp_max` of type `Timestamp`
+  """
+  timestamp_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Lead'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Lead_Data {
+  """
+  ✨ Generated from Field `Lead`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Lead`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Lead`.`userId` of type `UUID`
+  """
+  userId: UUID
+  """
+  ✨ `_expr` server value variant of `userId` (✨ Generated from Field `Lead`.`userId` of type `UUID`)
+  """
+  userId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Lead`.`user` of type `User`
+  """
+  user: User_Key
+  """
+  ✨ Generated from Field `Lead`.`companyName` of type `String`
+  """
+  companyName: String
+  """
+  ✨ `_expr` server value variant of `companyName` (✨ Generated from Field `Lead`.`companyName` of type `String`)
+  """
+  companyName_expr: String_Expr
+  """
+  ✨ Generated from Field `Lead`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Lead`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Lead`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Lead`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Lead`.`email` of type `String!`
+  """
+  email: String
+  """
+  ✨ `_expr` server value variant of `email` (✨ Generated from Field `Lead`.`email` of type `String!`)
+  """
+  email_expr: String_Expr
+  """
+  ✨ Generated from Field `Lead`.`proposedStrategy` of type `String`
+  """
+  proposedStrategy: String
+  """
+  ✨ `_expr` server value variant of `proposedStrategy` (✨ Generated from Field `Lead`.`proposedStrategy` of type `String`)
+  """
+  proposedStrategy_expr: String_Expr
+  """
+  ✨ Generated from Field `Lead`.`status` of type `String!`
+  """
+  status: String
+  """
+  ✨ `_expr` server value variant of `status` (✨ Generated from Field `Lead`.`status` of type `String!`)
+  """
+  status_expr: String_Expr
+  """
+  ✨ Generated from Field `Lead`.`urgencyScore` of type `Int`
+  """
+  urgencyScore: Int
+  """
+  ✨ `_expr` server value variant of `urgencyScore` (✨ Generated from Field `Lead`.`urgencyScore` of type `Int`)
+  """
+  urgencyScore_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `urgencyScore` (✨ Generated from Field `Lead`.`urgencyScore` of type `Int`)
+  """
+  urgencyScore_update: [Int_Update!]
+  """
+  ✨ Generated from Field `Lead`.`websiteGrade` of type `String`
+  """
+  websiteGrade: String
+  """
+  ✨ `_expr` server value variant of `websiteGrade` (✨ Generated from Field `Lead`.`websiteGrade` of type `String`)
+  """
+  websiteGrade_expr: String_Expr
+  """
+  ✨ Generated from Field `Lead`.`websiteURL` of type `String`
+  """
+  websiteURL: String
+  """
+  ✨ `_expr` server value variant of `websiteURL` (✨ Generated from Field `Lead`.`websiteURL` of type `String`)
+  """
+  websiteURL_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'Lead'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Lead_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Lead_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Lead_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Lead_Filter!]
+  """
+  ✨ Generated from Field `Lead`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Lead`.`userId` of type `UUID`
+  """
+  userId: UUID_Filter
+  """
+  ✨ Generated from Field `Lead`.`user` of type `User`
+  """
+  user: User_Filter
+  """
+  ✨ Generated from Field `Lead`.`companyName` of type `String`
+  """
+  companyName: String_Filter
+  """
+  ✨ Generated from Field `Lead`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Lead`.`email` of type `String!`
+  """
+  email: String_Filter
+  """
+  ✨ Generated from Field `Lead`.`proposedStrategy` of type `String`
+  """
+  proposedStrategy: String_Filter
+  """
+  ✨ Generated from Field `Lead`.`status` of type `String!`
+  """
+  status: String_Filter
+  """
+  ✨ Generated from Field `Lead`.`urgencyScore` of type `Int`
+  """
+  urgencyScore: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`websiteGrade` of type `String`
+  """
+  websiteGrade: String_Filter
+  """
+  ✨ Generated from Field `Lead`.`websiteURL` of type `String`
+  """
+  websiteURL: String_Filter
+  """
+  ✨ Generated from Field `Lead`.`interactions_on_lead` of type `[Interaction!]!`
+  """
+  interactions_on_lead: Interaction_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'Lead'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Lead_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Lead_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Lead_Filter
+}
+"""
+✨ Generated having input type for table 'Lead'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Lead_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Lead_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Lead_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Lead_Having!]
+  """
+  ✨ Generated from Field `Lead`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`companyName_count` of type `Int!`
+  """
+  companyName_count: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`email_count` of type `Int!`
+  """
+  email_count: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`proposedStrategy_count` of type `Int!`
+  """
+  proposedStrategy_count: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`status_count` of type `Int!`
+  """
+  status_count: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`urgencyScore_count` of type `Int!`
+  """
+  urgencyScore_count: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`userId_count` of type `Int!`
+  """
+  userId_count: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`websiteGrade_count` of type `Int!`
+  """
+  websiteGrade_count: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`websiteURL_count` of type `Int!`
+  """
+  websiteURL_count: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`urgencyScore_sum` of type `Int`
+  """
+  urgencyScore_sum: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`urgencyScore_avg` of type `Float`
+  """
+  urgencyScore_avg: Float_Filter
+  """
+  ✨ Generated from Field `Lead`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Lead`.`urgencyScore_min` of type `Int`
+  """
+  urgencyScore_min: Int_Filter
+  """
+  ✨ Generated from Field `Lead`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Lead`.`urgencyScore_max` of type `Int`
+  """
+  urgencyScore_max: Int_Filter
+}
+"""
+✨ Generated key input type for table 'Lead'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Lead_Key {
+  """
+  ✨ Generated from Field `Lead`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Lead`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'Lead'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Lead_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Lead_Filter
+}
+"""
+✨ Generated order input type for table 'Lead'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Lead_Order {
+  """
+  ✨ Generated from Field `Lead`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`userId` of type `UUID`
+  """
+  userId: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`user` of type `User`
+  """
+  user: User_Order
+  """
+  ✨ Generated from Field `Lead`.`companyName` of type `String`
+  """
+  companyName: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`email` of type `String!`
+  """
+  email: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`proposedStrategy` of type `String`
+  """
+  proposedStrategy: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`status` of type `String!`
+  """
+  status: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`urgencyScore` of type `Int`
+  """
+  urgencyScore: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`websiteGrade` of type `String`
+  """
+  websiteGrade: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`websiteURL` of type `String`
+  """
+  websiteURL: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`companyName_count` of type `Int!`
+  """
+  companyName_count: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`email_count` of type `Int!`
+  """
+  email_count: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`proposedStrategy_count` of type `Int!`
+  """
+  proposedStrategy_count: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`status_count` of type `Int!`
+  """
+  status_count: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`urgencyScore_count` of type `Int!`
+  """
+  urgencyScore_count: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`userId_count` of type `Int!`
+  """
+  userId_count: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`websiteGrade_count` of type `Int!`
+  """
+  websiteGrade_count: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`websiteURL_count` of type `Int!`
+  """
+  websiteURL_count: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`urgencyScore_sum` of type `Int`
+  """
+  urgencyScore_sum: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`urgencyScore_avg` of type `Float`
+  """
+  urgencyScore_avg: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`urgencyScore_min` of type `Int`
+  """
+  urgencyScore_min: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `Lead`.`urgencyScore_max` of type `Int`
+  """
+  urgencyScore_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'User'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input User_Data {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `User`.`companyName` of type `String`
+  """
+  companyName: String
+  """
+  ✨ `_expr` server value variant of `companyName` (✨ Generated from Field `User`.`companyName` of type `String`)
+  """
+  companyName_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String`
+  """
+  displayName: String
+  """
+  ✨ `_expr` server value variant of `displayName` (✨ Generated from Field `User`.`displayName` of type `String`)
+  """
+  displayName_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: String
+  """
+  ✨ `_expr` server value variant of `email` (✨ Generated from Field `User`.`email` of type `String!`)
+  """
+  email_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`passwordHash` of type `String!`
+  """
+  passwordHash: String
+  """
+  ✨ `_expr` server value variant of `passwordHash` (✨ Generated from Field `User`.`passwordHash` of type `String!`)
+  """
+  passwordHash_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`role` of type `String!`
+  """
+  role: String
+  """
+  ✨ `_expr` server value variant of `role` (✨ Generated from Field `User`.`role` of type `String!`)
+  """
+  role_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`websiteURL` of type `String`
+  """
+  websiteURL: String
+  """
+  ✨ `_expr` server value variant of `websiteURL` (✨ Generated from Field `User`.`websiteURL` of type `String`)
+  """
+  websiteURL_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'User'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [User_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: User_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [User_Filter!]
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `User`.`companyName` of type `String`
+  """
+  companyName: String_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String`
+  """
+  displayName: String_Filter
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: String_Filter
+  """
+  ✨ Generated from Field `User`.`passwordHash` of type `String!`
+  """
+  passwordHash: String_Filter
+  """
+  ✨ Generated from Field `User`.`role` of type `String!`
+  """
+  role: String_Filter
+  """
+  ✨ Generated from Field `User`.`websiteURL` of type `String`
+  """
+  websiteURL: String_Filter
+  """
+  ✨ Generated from Field `User`.`campaigns_on_client` of type `[Campaign!]!`
+  """
+  campaigns_on_client: Campaign_ListFilter
+  """
+  ✨ Generated from Field `User`.`creatorProfiles_on_user` of type `[CreatorProfile!]!`
+  """
+  creatorProfiles_on_user: CreatorProfile_ListFilter
+  """
+  ✨ Generated from Field `User`.`interactions_on_user` of type `[Interaction!]!`
+  """
+  interactions_on_user: Interaction_ListFilter
+  """
+  ✨ Generated from Field `User`.`leads_on_user` of type `[Lead!]!`
+  """
+  leads_on_user: Lead_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'User'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input User_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [User_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: User_Filter
+}
+"""
+✨ Generated having input type for table 'User'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [User_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: User_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [User_Having!]
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`companyName_count` of type `Int!`
+  """
+  companyName_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`displayName_count` of type `Int!`
+  """
+  displayName_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`passwordHash_count` of type `Int!`
+  """
+  passwordHash_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`role_count` of type `Int!`
+  """
+  role_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`websiteURL_count` of type `Int!`
+  """
+  websiteURL_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'User'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input User_Key {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'User'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input User_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: User_Filter
+}
+"""
+✨ Generated order input type for table 'User'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input User_Order {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `User`.`companyName` of type `String`
+  """
+  companyName: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String`
+  """
+  displayName: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: OrderDirection
+  """
+  ✨ Generated from Field `User`.`passwordHash` of type `String!`
+  """
+  passwordHash: OrderDirection
+  """
+  ✨ Generated from Field `User`.`role` of type `String!`
+  """
+  role: OrderDirection
+  """
+  ✨ Generated from Field `User`.`websiteURL` of type `String`
+  """
+  websiteURL: OrderDirection
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`companyName_count` of type `Int!`
+  """
+  companyName_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`displayName_count` of type `Int!`
+  """
+  displayName_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`passwordHash_count` of type `Int!`
+  """
+  passwordHash_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`role_count` of type `Int!`
+  """
+  role_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`websiteURL_count` of type `Int!`
+  """
+  websiteURL_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'VerificationScan'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input VerificationScan_Data {
+  """
+  ✨ Generated from Field `VerificationScan`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `VerificationScan`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `VerificationScan`.`creatorProfileId` of type `UUID!`
+  """
+  creatorProfileId: UUID
+  """
+  ✨ `_expr` server value variant of `creatorProfileId` (✨ Generated from Field `VerificationScan`.`creatorProfileId` of type `UUID!`)
+  """
+  creatorProfileId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `VerificationScan`.`creatorProfile` of type `CreatorProfile!`
+  """
+  creatorProfile: CreatorProfile_Key
+  """
+  ✨ Generated from Field `VerificationScan`.`audienceQualityScore` of type `Float!`
+  """
+  audienceQualityScore: Float
+  """
+  ✨ `_expr` server value variant of `audienceQualityScore` (✨ Generated from Field `VerificationScan`.`audienceQualityScore` of type `Float!`)
+  """
+  audienceQualityScore_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `audienceQualityScore` (✨ Generated from Field `VerificationScan`.`audienceQualityScore` of type `Float!`)
+  """
+  audienceQualityScore_update: [Float_Update!]
+  """
+  ✨ Generated from Field `VerificationScan`.`botDetectionFlag` of type `Boolean!`
+  """
+  botDetectionFlag: Boolean
+  """
+  ✨ `_expr` server value variant of `botDetectionFlag` (✨ Generated from Field `VerificationScan`.`botDetectionFlag` of type `Boolean!`)
+  """
+  botDetectionFlag_expr: Boolean_Expr
+  """
+  ✨ Generated from Field `VerificationScan`.`detailedReportURL` of type `String`
+  """
+  detailedReportURL: String
+  """
+  ✨ `_expr` server value variant of `detailedReportURL` (✨ Generated from Field `VerificationScan`.`detailedReportURL` of type `String`)
+  """
+  detailedReportURL_expr: String_Expr
+  """
+  ✨ Generated from Field `VerificationScan`.`overallVerdict` of type `String!`
+  """
+  overallVerdict: String
+  """
+  ✨ `_expr` server value variant of `overallVerdict` (✨ Generated from Field `VerificationScan`.`overallVerdict` of type `String!`)
+  """
+  overallVerdict_expr: String_Expr
+  """
+  ✨ Generated from Field `VerificationScan`.`scanDate` of type `Timestamp!`
+  """
+  scanDate: Timestamp
+  """
+  ✨ `_expr` server value variant of `scanDate` (✨ Generated from Field `VerificationScan`.`scanDate` of type `Timestamp!`)
+  """
+  scanDate_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `scanDate` (✨ Generated from Field `VerificationScan`.`scanDate` of type `Timestamp!`)
+  """
+  scanDate_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `scanDate` (✨ Generated from Field `VerificationScan`.`scanDate` of type `Timestamp!`)
+  """
+  scanDate_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `VerificationScan`.`socialMediaPlatform` of type `String!`
+  """
+  socialMediaPlatform: String
+  """
+  ✨ `_expr` server value variant of `socialMediaPlatform` (✨ Generated from Field `VerificationScan`.`socialMediaPlatform` of type `String!`)
+  """
+  socialMediaPlatform_expr: String_Expr
+  """
+  ✨ Generated from Field `VerificationScan`.`suspiciousEngagementPatterns` of type `String!`
+  """
+  suspiciousEngagementPatterns: String
+  """
+  ✨ `_expr` server value variant of `suspiciousEngagementPatterns` (✨ Generated from Field `VerificationScan`.`suspiciousEngagementPatterns` of type `String!`)
+  """
+  suspiciousEngagementPatterns_expr: String_Expr
+  """
+  ✨ Generated from Field `VerificationScan`.`username` of type `String!`
+  """
+  username: String
+  """
+  ✨ `_expr` server value variant of `username` (✨ Generated from Field `VerificationScan`.`username` of type `String!`)
+  """
+  username_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'VerificationScan'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input VerificationScan_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [VerificationScan_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: VerificationScan_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [VerificationScan_Filter!]
+  """
+  ✨ Generated from Field `VerificationScan`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`creatorProfileId` of type `UUID!`
+  """
+  creatorProfileId: UUID_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`creatorProfile` of type `CreatorProfile!`
+  """
+  creatorProfile: CreatorProfile_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`audienceQualityScore` of type `Float!`
+  """
+  audienceQualityScore: Float_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`botDetectionFlag` of type `Boolean!`
+  """
+  botDetectionFlag: Boolean_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`detailedReportURL` of type `String`
+  """
+  detailedReportURL: String_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`overallVerdict` of type `String!`
+  """
+  overallVerdict: String_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`scanDate` of type `Timestamp!`
+  """
+  scanDate: Timestamp_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`socialMediaPlatform` of type `String!`
+  """
+  socialMediaPlatform: String_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`suspiciousEngagementPatterns` of type `String!`
+  """
+  suspiciousEngagementPatterns: String_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`username` of type `String!`
+  """
+  username: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'VerificationScan'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input VerificationScan_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [VerificationScan_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: VerificationScan_Filter
+}
+"""
+✨ Generated having input type for table 'VerificationScan'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input VerificationScan_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [VerificationScan_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: VerificationScan_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [VerificationScan_Having!]
+  """
+  ✨ Generated from Field `VerificationScan`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`audienceQualityScore_count` of type `Int!`
+  """
+  audienceQualityScore_count: Int_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`botDetectionFlag_count` of type `Int!`
+  """
+  botDetectionFlag_count: Int_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`creatorProfileId_count` of type `Int!`
+  """
+  creatorProfileId_count: Int_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`detailedReportURL_count` of type `Int!`
+  """
+  detailedReportURL_count: Int_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`overallVerdict_count` of type `Int!`
+  """
+  overallVerdict_count: Int_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`scanDate_count` of type `Int!`
+  """
+  scanDate_count: Int_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`socialMediaPlatform_count` of type `Int!`
+  """
+  socialMediaPlatform_count: Int_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`suspiciousEngagementPatterns_count` of type `Int!`
+  """
+  suspiciousEngagementPatterns_count: Int_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`username_count` of type `Int!`
+  """
+  username_count: Int_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`audienceQualityScore_sum` of type `Float`
+  """
+  audienceQualityScore_sum: Float_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`audienceQualityScore_avg` of type `Float`
+  """
+  audienceQualityScore_avg: Float_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`audienceQualityScore_min` of type `Float`
+  """
+  audienceQualityScore_min: Float_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`scanDate_min` of type `Timestamp`
+  """
+  scanDate_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`audienceQualityScore_max` of type `Float`
+  """
+  audienceQualityScore_max: Float_Filter
+  """
+  ✨ Generated from Field `VerificationScan`.`scanDate_max` of type `Timestamp`
+  """
+  scanDate_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'VerificationScan'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input VerificationScan_Key {
+  """
+  ✨ Generated from Field `VerificationScan`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `VerificationScan`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'VerificationScan'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input VerificationScan_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: VerificationScan_Filter
+}
+"""
+✨ Generated order input type for table 'VerificationScan'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input VerificationScan_Order {
+  """
+  ✨ Generated from Field `VerificationScan`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`creatorProfileId` of type `UUID!`
+  """
+  creatorProfileId: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`creatorProfile` of type `CreatorProfile!`
+  """
+  creatorProfile: CreatorProfile_Order
+  """
+  ✨ Generated from Field `VerificationScan`.`audienceQualityScore` of type `Float!`
+  """
+  audienceQualityScore: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`botDetectionFlag` of type `Boolean!`
+  """
+  botDetectionFlag: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`detailedReportURL` of type `String`
+  """
+  detailedReportURL: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`overallVerdict` of type `String!`
+  """
+  overallVerdict: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`scanDate` of type `Timestamp!`
+  """
+  scanDate: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`socialMediaPlatform` of type `String!`
+  """
+  socialMediaPlatform: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`suspiciousEngagementPatterns` of type `String!`
+  """
+  suspiciousEngagementPatterns: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`username` of type `String!`
+  """
+  username: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`audienceQualityScore_count` of type `Int!`
+  """
+  audienceQualityScore_count: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`botDetectionFlag_count` of type `Int!`
+  """
+  botDetectionFlag_count: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`creatorProfileId_count` of type `Int!`
+  """
+  creatorProfileId_count: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`detailedReportURL_count` of type `Int!`
+  """
+  detailedReportURL_count: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`overallVerdict_count` of type `Int!`
+  """
+  overallVerdict_count: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`scanDate_count` of type `Int!`
+  """
+  scanDate_count: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`socialMediaPlatform_count` of type `Int!`
+  """
+  socialMediaPlatform_count: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`suspiciousEngagementPatterns_count` of type `Int!`
+  """
+  suspiciousEngagementPatterns_count: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`username_count` of type `Int!`
+  """
+  username_count: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`audienceQualityScore_sum` of type `Float`
+  """
+  audienceQualityScore_sum: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`audienceQualityScore_avg` of type `Float`
+  """
+  audienceQualityScore_avg: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`audienceQualityScore_min` of type `Float`
+  """
+  audienceQualityScore_min: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`scanDate_min` of type `Timestamp`
+  """
+  scanDate_min: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`audienceQualityScore_max` of type `Float`
+  """
+  audienceQualityScore_max: OrderDirection
+  """
+  ✨ Generated from Field `VerificationScan`.`scanDate_max` of type `Timestamp`
+  """
+  scanDate_max: OrderDirection
+}

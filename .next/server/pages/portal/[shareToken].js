@@ -1,0 +1,11 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/pages/portal/[shareToken].js")
+R.c("server/chunks/ssr/_fd325e01._.js")
+R.c("server/chunks/ssr/_12618de9._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__7cbdeed2._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__84687bd7._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_838a9e92._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__82e7a549._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__b4bc9ed6._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__15b15d64._.js")
+R.m(61328)
+module.exports=R.m(61328).exports

@@ -1,0 +1,8 @@
+__turbopack_load_page_chunks__("/portal/[shareToken]", [
+  "static/chunks/cc55f2638dc108ef.js",
+  "static/chunks/b83e9443234e5d4a.js",
+  "static/chunks/c8ec05393609b492.js",
+  "static/chunks/cf9adc354c6935b1.js",
+  "static/chunks/b4913999a220e9ce.js",
+  "static/chunks/turbopack-36704edab0c93523.js"
+])

@@ -1,0 +1,1134 @@
+extend type Campaign {
+  """
+  ✨ List `Interaction` objects in a one-to-many relationship (where `Interaction`.`campaign` is this object).
+  """
+  interactions_on_campaign(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Interaction_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Interaction_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Interaction_Having
+  ): [Interaction!]! @fdc_generated(from: "Interaction.campaign", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Campaign", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Campaign` table.
+  """
+  _count: Int! @fdc_generated(from: "Campaign.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Campaign` table where the `budgetProposed` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  budgetProposed_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Campaign.budgetProposed", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Campaign` table where the `clientId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  clientId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Campaign.clientId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Campaign` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Campaign.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Campaign` table where the `creatorId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  creatorId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Campaign.creatorId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Campaign` table where the `description` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  description_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Campaign.description", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Campaign` table where the `endDate` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  endDate_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Campaign.endDate", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Campaign` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Campaign.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Campaign` table where the `name` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  name_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Campaign.name", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Campaign` table where the `notes` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  notes_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Campaign.notes", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Campaign` table where the `startDate` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  startDate_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Campaign.startDate", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Campaign` table where the `status` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  status_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Campaign.status", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Campaign` table where the `targetAudience` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  targetAudience_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Campaign.targetAudience", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `budgetProposed` field in the `Campaign` table.
+  """
+  budgetProposed_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Campaign.budgetProposed", purpose: QUERY_SUM)
+  """
+  ✨ Average the `budgetProposed` field in the `Campaign` table.
+  """
+  budgetProposed_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Campaign.budgetProposed", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `budgetProposed` field in the `Campaign` table.
+  """
+  budgetProposed_min: Float @fdc_generated(from: "Campaign.budgetProposed", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `createdAt` field in the `Campaign` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "Campaign.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `endDate` field in the `Campaign` table.
+  """
+  endDate_min: Date @fdc_generated(from: "Campaign.endDate", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `startDate` field in the `Campaign` table.
+  """
+  startDate_min: Date @fdc_generated(from: "Campaign.startDate", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `budgetProposed` field in the `Campaign` table.
+  """
+  budgetProposed_max: Float @fdc_generated(from: "Campaign.budgetProposed", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `createdAt` field in the `Campaign` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "Campaign.createdAt", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `endDate` field in the `Campaign` table.
+  """
+  endDate_max: Date @fdc_generated(from: "Campaign.endDate", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `startDate` field in the `Campaign` table.
+  """
+  startDate_max: Date @fdc_generated(from: "Campaign.startDate", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "Campaign.id", purpose: GLOBAL_ID)
+}
+extend type CreatorProfile {
+  """
+  ✨ List `Campaign` objects in a one-to-many relationship (where `Campaign`.`creator` is this object).
+  """
+  campaigns_on_creator(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Campaign_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Campaign_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Campaign_Having
+  ): [Campaign!]! @fdc_generated(from: "Campaign.creator", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `VerificationScan` objects in a one-to-many relationship (where `VerificationScan`.`creatorProfile` is this object).
+  """
+  verificationScans_on_creatorProfile(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: VerificationScan_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [VerificationScan_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: VerificationScan_Having
+  ): [VerificationScan!]! @fdc_generated(from: "VerificationScan.creatorProfile", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "CreatorProfile", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table.
+  """
+  _count: Int! @fdc_generated(from: "CreatorProfile.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table where the `audienceQualityScore` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  audienceQualityScore_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile.audienceQualityScore", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table where the `bio` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  bio_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile.bio", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table where the `engagementRate` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  engagementRate_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile.engagementRate", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table where the `followerCount` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  followerCount_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile.followerCount", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table where the `geoTargetingData` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  geoTargetingData_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile.geoTargetingData", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table where the `niche` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  niche_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile.niche", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table where the `profilePictureURL` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  profilePictureURL_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile.profilePictureURL", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table where the `socialMediaPlatform` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  socialMediaPlatform_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile.socialMediaPlatform", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table where the `userId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  userId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile.userId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table where the `username` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  username_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile.username", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CreatorProfile` table where the `verificationStatus` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  verificationStatus_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile.verificationStatus", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `audienceQualityScore` field in the `CreatorProfile` table.
+  """
+  audienceQualityScore_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "CreatorProfile.audienceQualityScore", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `engagementRate` field in the `CreatorProfile` table.
+  """
+  engagementRate_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "CreatorProfile.engagementRate", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `followerCount` field in the `CreatorProfile` table.
+  """
+  followerCount_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "CreatorProfile.followerCount", purpose: QUERY_SUM)
+  """
+  ✨ Average the `audienceQualityScore` field in the `CreatorProfile` table.
+  """
+  audienceQualityScore_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "CreatorProfile.audienceQualityScore", purpose: QUERY_AVG)
+  """
+  ✨ Average the `engagementRate` field in the `CreatorProfile` table.
+  """
+  engagementRate_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "CreatorProfile.engagementRate", purpose: QUERY_AVG)
+  """
+  ✨ Average the `followerCount` field in the `CreatorProfile` table.
+  """
+  followerCount_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "CreatorProfile.followerCount", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `audienceQualityScore` field in the `CreatorProfile` table.
+  """
+  audienceQualityScore_min: Float @fdc_generated(from: "CreatorProfile.audienceQualityScore", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `createdAt` field in the `CreatorProfile` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "CreatorProfile.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `engagementRate` field in the `CreatorProfile` table.
+  """
+  engagementRate_min: Float @fdc_generated(from: "CreatorProfile.engagementRate", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `followerCount` field in the `CreatorProfile` table.
+  """
+  followerCount_min: Int @fdc_generated(from: "CreatorProfile.followerCount", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `audienceQualityScore` field in the `CreatorProfile` table.
+  """
+  audienceQualityScore_max: Float @fdc_generated(from: "CreatorProfile.audienceQualityScore", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `createdAt` field in the `CreatorProfile` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "CreatorProfile.createdAt", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `engagementRate` field in the `CreatorProfile` table.
+  """
+  engagementRate_max: Float @fdc_generated(from: "CreatorProfile.engagementRate", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `followerCount` field in the `CreatorProfile` table.
+  """
+  followerCount_max: Int @fdc_generated(from: "CreatorProfile.followerCount", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "CreatorProfile.id", purpose: GLOBAL_ID)
+}
+extend type Interaction {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Interaction", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Interaction` table.
+  """
+  _count: Int! @fdc_generated(from: "Interaction.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Interaction` table where the `associatedAgent` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  associatedAgent_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Interaction.associatedAgent", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Interaction` table where the `campaignId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  campaignId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Interaction.campaignId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Interaction` table where the `content` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  content_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Interaction.content", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Interaction` table where the `extractedData` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  extractedData_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Interaction.extractedData", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Interaction` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Interaction.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Interaction` table where the `leadId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  leadId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Interaction.leadId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Interaction` table where the `timestamp` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  timestamp_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Interaction.timestamp", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Interaction` table where the `type` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  type_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Interaction.type", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Interaction` table where the `userId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  userId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Interaction.userId", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `timestamp` field in the `Interaction` table.
+  """
+  timestamp_min: Timestamp @fdc_generated(from: "Interaction.timestamp", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `timestamp` field in the `Interaction` table.
+  """
+  timestamp_max: Timestamp @fdc_generated(from: "Interaction.timestamp", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "Interaction.id", purpose: GLOBAL_ID)
+}
+extend type Lead {
+  """
+  ✨ List `Interaction` objects in a one-to-many relationship (where `Interaction`.`lead` is this object).
+  """
+  interactions_on_lead(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Interaction_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Interaction_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Interaction_Having
+  ): [Interaction!]! @fdc_generated(from: "Interaction.lead", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Lead", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Lead` table.
+  """
+  _count: Int! @fdc_generated(from: "Lead.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Lead` table where the `companyName` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  companyName_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Lead.companyName", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Lead` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Lead.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Lead` table where the `email` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  email_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Lead.email", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Lead` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Lead.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Lead` table where the `proposedStrategy` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  proposedStrategy_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Lead.proposedStrategy", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Lead` table where the `status` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  status_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Lead.status", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Lead` table where the `urgencyScore` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  urgencyScore_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Lead.urgencyScore", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Lead` table where the `userId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  userId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Lead.userId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Lead` table where the `websiteGrade` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  websiteGrade_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Lead.websiteGrade", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Lead` table where the `websiteURL` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  websiteURL_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Lead.websiteURL", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `urgencyScore` field in the `Lead` table.
+  """
+  urgencyScore_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Lead.urgencyScore", purpose: QUERY_SUM)
+  """
+  ✨ Average the `urgencyScore` field in the `Lead` table.
+  """
+  urgencyScore_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Lead.urgencyScore", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `createdAt` field in the `Lead` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "Lead.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `urgencyScore` field in the `Lead` table.
+  """
+  urgencyScore_min: Int @fdc_generated(from: "Lead.urgencyScore", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `Lead` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "Lead.createdAt", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `urgencyScore` field in the `Lead` table.
+  """
+  urgencyScore_max: Int @fdc_generated(from: "Lead.urgencyScore", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "Lead.id", purpose: GLOBAL_ID)
+}
+extend type User {
+  """
+  ✨ List `Campaign` objects in a one-to-many relationship (where `Campaign`.`client` is this object).
+  """
+  campaigns_on_client(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Campaign_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Campaign_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Campaign_Having
+  ): [Campaign!]! @fdc_generated(from: "Campaign.client", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `CreatorProfile` objects in a one-to-many relationship (where `CreatorProfile`.`user` is this object).
+  """
+  creatorProfiles_on_user(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: CreatorProfile_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [CreatorProfile_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: CreatorProfile_Having
+  ): [CreatorProfile!]! @fdc_generated(from: "CreatorProfile.user", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `Interaction` objects in a one-to-many relationship (where `Interaction`.`user` is this object).
+  """
+  interactions_on_user(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Interaction_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Interaction_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Interaction_Having
+  ): [Interaction!]! @fdc_generated(from: "Interaction.user", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `Lead` objects in a one-to-many relationship (where `Lead`.`user` is this object).
+  """
+  leads_on_user(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Lead_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Lead_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Lead_Having
+  ): [Lead!]! @fdc_generated(from: "Lead.user", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "User", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `User` table.
+  """
+  _count: Int! @fdc_generated(from: "User.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `companyName` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  companyName_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.companyName", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `displayName` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  displayName_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.displayName", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `email` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  email_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.email", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `passwordHash` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  passwordHash_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.passwordHash", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `role` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  role_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.role", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `websiteURL` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  websiteURL_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.websiteURL", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `createdAt` field in the `User` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "User.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `User` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "User.createdAt", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "User.id", purpose: GLOBAL_ID)
+}
+extend type VerificationScan {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "VerificationScan", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `VerificationScan` table.
+  """
+  _count: Int! @fdc_generated(from: "VerificationScan.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `VerificationScan` table where the `audienceQualityScore` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  audienceQualityScore_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "VerificationScan.audienceQualityScore", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `VerificationScan` table where the `botDetectionFlag` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  botDetectionFlag_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "VerificationScan.botDetectionFlag", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `VerificationScan` table where the `creatorProfileId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  creatorProfileId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "VerificationScan.creatorProfileId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `VerificationScan` table where the `detailedReportURL` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  detailedReportURL_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "VerificationScan.detailedReportURL", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `VerificationScan` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "VerificationScan.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `VerificationScan` table where the `overallVerdict` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  overallVerdict_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "VerificationScan.overallVerdict", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `VerificationScan` table where the `scanDate` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  scanDate_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "VerificationScan.scanDate", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `VerificationScan` table where the `socialMediaPlatform` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  socialMediaPlatform_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "VerificationScan.socialMediaPlatform", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `VerificationScan` table where the `suspiciousEngagementPatterns` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  suspiciousEngagementPatterns_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "VerificationScan.suspiciousEngagementPatterns", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `VerificationScan` table where the `username` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  username_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "VerificationScan.username", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `audienceQualityScore` field in the `VerificationScan` table.
+  """
+  audienceQualityScore_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "VerificationScan.audienceQualityScore", purpose: QUERY_SUM)
+  """
+  ✨ Average the `audienceQualityScore` field in the `VerificationScan` table.
+  """
+  audienceQualityScore_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "VerificationScan.audienceQualityScore", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `audienceQualityScore` field in the `VerificationScan` table.
+  """
+  audienceQualityScore_min: Float @fdc_generated(from: "VerificationScan.audienceQualityScore", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `scanDate` field in the `VerificationScan` table.
+  """
+  scanDate_min: Timestamp @fdc_generated(from: "VerificationScan.scanDate", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `audienceQualityScore` field in the `VerificationScan` table.
+  """
+  audienceQualityScore_max: Float @fdc_generated(from: "VerificationScan.audienceQualityScore", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `scanDate` field in the `VerificationScan` table.
+  """
+  scanDate_max: Timestamp @fdc_generated(from: "VerificationScan.scanDate", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "VerificationScan.id", purpose: GLOBAL_ID)
+}

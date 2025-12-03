@@ -1,0 +1,68 @@
+extend type Campaign {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "Campaign", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `Campaign`.`client`. It must match the value of `User`.`id`. See `@ref` for how to customize it.
+  """
+  clientId: UUID! @fdc_generated(from: "Campaign.client", purpose: IMPLICIT_REF_FIELD)
+  """
+  ✨ Implicit foreign key field based on `Campaign`.`creator`. It must match the value of `CreatorProfile`.`id`. See `@ref` for how to customize it.
+  """
+  creatorId: UUID @fdc_generated(from: "Campaign.creator", purpose: IMPLICIT_REF_FIELD)
+}
+extend type CreatorProfile {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "CreatorProfile", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `CreatorProfile`.`user`. It must match the value of `User`.`id`. See `@ref` for how to customize it.
+  """
+  userId: UUID! @fdc_generated(from: "CreatorProfile.user", purpose: IMPLICIT_REF_FIELD)
+}
+extend type Interaction {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "Interaction", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `Interaction`.`campaign`. It must match the value of `Campaign`.`id`. See `@ref` for how to customize it.
+  """
+  campaignId: UUID @fdc_generated(from: "Interaction.campaign", purpose: IMPLICIT_REF_FIELD)
+  """
+  ✨ Implicit foreign key field based on `Interaction`.`lead`. It must match the value of `Lead`.`id`. See `@ref` for how to customize it.
+  """
+  leadId: UUID @fdc_generated(from: "Interaction.lead", purpose: IMPLICIT_REF_FIELD)
+  """
+  ✨ Implicit foreign key field based on `Interaction`.`user`. It must match the value of `User`.`id`. See `@ref` for how to customize it.
+  """
+  userId: UUID @fdc_generated(from: "Interaction.user", purpose: IMPLICIT_REF_FIELD)
+}
+extend type Lead {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "Lead", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `Lead`.`user`. It must match the value of `User`.`id`. See `@ref` for how to customize it.
+  """
+  userId: UUID @fdc_generated(from: "Lead.user", purpose: IMPLICIT_REF_FIELD)
+}
+extend type User {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "User", purpose: IMPLICIT_KEY_FIELD)
+}
+extend type VerificationScan {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "VerificationScan", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `VerificationScan`.`creatorProfile`. It must match the value of `CreatorProfile`.`id`. See `@ref` for how to customize it.
+  """
+  creatorProfileId: UUID! @fdc_generated(from: "VerificationScan.creatorProfile", purpose: IMPLICIT_REF_FIELD)
+}

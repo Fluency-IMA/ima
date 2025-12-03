@@ -1,0 +1,320 @@
+extend type Query {
+  """
+  ✨ Look up a single `Campaign` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  campaign(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Campaign_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Campaign_FirstRow
+  ): Campaign @fdc_generated(from: "Campaign", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `CreatorProfile` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  creatorProfile(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: CreatorProfile_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: CreatorProfile_FirstRow
+  ): CreatorProfile @fdc_generated(from: "CreatorProfile", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Interaction` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  interaction(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Interaction_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Interaction_FirstRow
+  ): Interaction @fdc_generated(from: "Interaction", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Lead` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  lead(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Lead_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Lead_FirstRow
+  ): Lead @fdc_generated(from: "Lead", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `User` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  user(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User @fdc_generated(from: "User", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `VerificationScan` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  verificationScan(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: VerificationScan_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: VerificationScan_FirstRow
+  ): VerificationScan @fdc_generated(from: "VerificationScan", purpose: QUERY_SINGLE)
+  """
+  ✨ List `Campaign` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  campaigns(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Campaign_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Campaign_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Campaign_Having
+  ): [Campaign!]! @fdc_generated(from: "Campaign", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `CreatorProfile` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  creatorProfiles(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: CreatorProfile_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [CreatorProfile_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: CreatorProfile_Having
+  ): [CreatorProfile!]! @fdc_generated(from: "CreatorProfile", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Interaction` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  interactions(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Interaction_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Interaction_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Interaction_Having
+  ): [Interaction!]! @fdc_generated(from: "Interaction", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Lead` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  leads(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Lead_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Lead_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Lead_Having
+  ): [Lead!]! @fdc_generated(from: "Lead", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `User` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  users(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: User_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [User_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: User_Having
+  ): [User!]! @fdc_generated(from: "User", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `VerificationScan` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  verificationScans(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: VerificationScan_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [VerificationScan_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: VerificationScan_Having
+  ): [VerificationScan!]! @fdc_generated(from: "VerificationScan", purpose: QUERY_MULTIPLE)
+}

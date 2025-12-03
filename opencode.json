@@ -1,0 +1,8 @@
+{
+  "settings": {},
+  "commands": {
+    "security-audit": {
+      "prompt": "Perform a comprehensive security audit of the FLUENCY website codebase. Search for:\n\n1. EXPOSED API KEYS:\n   - Look for API keys, tokens, secrets in all files\n   - Check for patterns like API_KEY, SECRET_KEY, TOKEN, etc.\n   - Look for hardcoded credentials in configuration files\n   - Check environment variable usage and .env files\n\n2. HARDCODED PASSWORDS:\n   - Search for password strings, authentication credentials\n   - Look for default passwords or hardcoded auth data\n   - Check for any authentication logic with hardcoded values\n\n3. XSS VULNERABILITIES:\n   - Search for dangerous JavaScript functions (innerHTML, eval, etc.)\n   - Check for user input handling without sanitization\n   - Look for dynamic HTML/JS injection points\n   - Check React components for unsafe prop usage\n\n4. OTHER SECURITY ISSUES:\n   - Check for exposed sensitive data in client-side code\n   - Look for insecure HTTP requests\n   - Check for CORS or CSP issues\n   - Look for any other security vulnerabilities\n\nPlease provide a detailed report with:\n- File locations and line numbers for any issues found\n- Severity levels (Critical, High, Medium, Low)\n- Specific recommendations for each issue\n- Code examples of problematic sections\n\nFocus on the entire codebase including all components, services, and configuration files."
+    }
+  }
+}

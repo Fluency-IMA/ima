@@ -1,0 +1,73 @@
+type User @table {
+  email: String!
+  passwordHash: String!
+  role: String!
+  createdAt: Timestamp!
+  displayName: String
+  companyName: String
+  websiteURL: String
+}
+
+type Lead @table {
+  email: String!
+  status: String!
+  createdAt: Timestamp!
+  websiteURL: String
+  companyName: String
+  urgencyScore: Int
+  websiteGrade: String
+  proposedStrategy: String
+  user: User
+}
+
+type CreatorProfile @table {
+  socialMediaPlatform: String!
+  username: String!
+  followerCount: Int!
+  audienceQualityScore: Float!
+  verificationStatus: String!
+  createdAt: Timestamp!
+  niche: String
+  bio: String
+  engagementRate: Float
+  geoTargetingData: String
+  profilePictureURL: String
+  user: User!
+}
+
+type Campaign @table {
+  name: String!
+  status: String!
+  createdAt: Timestamp!
+  budgetProposed: Float!
+  description: String
+  targetAudience: String
+  startDate: Date
+  endDate: Date
+  notes: String
+  client: User!
+  creator: CreatorProfile
+}
+
+type VerificationScan @table {
+  scanDate: Timestamp!
+  socialMediaPlatform: String!
+  username: String!
+  audienceQualityScore: Float!
+  botDetectionFlag: Boolean!
+  suspiciousEngagementPatterns: String!
+  overallVerdict: String!
+  detailedReportURL: String
+  creatorProfile: CreatorProfile!
+}
+
+type Interaction @table {
+  type: String!
+  timestamp: Timestamp!
+  content: String!
+  associatedAgent: String
+  extractedData: String
+  user: User
+  lead: Lead
+  campaign: Campaign
+}

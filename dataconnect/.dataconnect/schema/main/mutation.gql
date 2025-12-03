@@ -1,0 +1,674 @@
+extend type Mutation {
+  """
+  ✨ Insert a single `Campaign` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  campaign_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Campaign_Data!
+  ): Campaign_KeyOutput! @fdc_generated(from: "Campaign", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `CreatorProfile` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  creatorProfile_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: CreatorProfile_Data!
+  ): CreatorProfile_KeyOutput! @fdc_generated(from: "CreatorProfile", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Interaction` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  interaction_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Interaction_Data!
+  ): Interaction_KeyOutput! @fdc_generated(from: "Interaction", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Lead` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  lead_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Lead_Data!
+  ): Lead_KeyOutput! @fdc_generated(from: "Lead", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `User` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `VerificationScan` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  verificationScan_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: VerificationScan_Data!
+  ): VerificationScan_KeyOutput! @fdc_generated(from: "VerificationScan", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert `Campaign` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  campaign_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Campaign_Data!]!
+  ): [Campaign_KeyOutput!]! @fdc_generated(from: "Campaign", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `CreatorProfile` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  creatorProfile_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [CreatorProfile_Data!]!
+  ): [CreatorProfile_KeyOutput!]! @fdc_generated(from: "CreatorProfile", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Interaction` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  interaction_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Interaction_Data!]!
+  ): [Interaction_KeyOutput!]! @fdc_generated(from: "Interaction", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Lead` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  lead_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Lead_Data!]!
+  ): [Lead_KeyOutput!]! @fdc_generated(from: "Lead", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `User` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `VerificationScan` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  verificationScan_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [VerificationScan_Data!]!
+  ): [VerificationScan_KeyOutput!]! @fdc_generated(from: "VerificationScan", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert or update a single `Campaign` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Campaign`.
+  """
+  campaign_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Campaign_Data!
+  ): Campaign_KeyOutput! @fdc_generated(from: "Campaign", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `CreatorProfile` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `CreatorProfile`.
+  """
+  creatorProfile_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: CreatorProfile_Data!
+  ): CreatorProfile_KeyOutput! @fdc_generated(from: "CreatorProfile", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Interaction` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Interaction`.
+  """
+  interaction_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Interaction_Data!
+  ): Interaction_KeyOutput! @fdc_generated(from: "Interaction", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Lead` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Lead`.
+  """
+  lead_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Lead_Data!
+  ): Lead_KeyOutput! @fdc_generated(from: "Lead", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `User` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `VerificationScan` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `VerificationScan`.
+  """
+  verificationScan_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: VerificationScan_Data!
+  ): VerificationScan_KeyOutput! @fdc_generated(from: "VerificationScan", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update `Campaign` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Campaign`.
+  """
+  campaign_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Campaign_Data!]!
+  ): [Campaign_KeyOutput!]! @fdc_generated(from: "Campaign", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `CreatorProfile` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `CreatorProfile`.
+  """
+  creatorProfile_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [CreatorProfile_Data!]!
+  ): [CreatorProfile_KeyOutput!]! @fdc_generated(from: "CreatorProfile", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Interaction` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Interaction`.
+  """
+  interaction_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Interaction_Data!]!
+  ): [Interaction_KeyOutput!]! @fdc_generated(from: "Interaction", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Lead` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Lead`.
+  """
+  lead_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Lead_Data!]!
+  ): [Lead_KeyOutput!]! @fdc_generated(from: "Lead", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `User` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `VerificationScan` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `VerificationScan`.
+  """
+  verificationScan_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [VerificationScan_Data!]!
+  ): [VerificationScan_KeyOutput!]! @fdc_generated(from: "VerificationScan", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Update a single `Campaign` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Campaign` or `null` if not found.
+  """
+  campaign_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Campaign_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Campaign_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Campaign_Data!
+  ): Campaign_KeyOutput @fdc_generated(from: "Campaign", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `CreatorProfile` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `CreatorProfile` or `null` if not found.
+  """
+  creatorProfile_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: CreatorProfile_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: CreatorProfile_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: CreatorProfile_Data!
+  ): CreatorProfile_KeyOutput @fdc_generated(from: "CreatorProfile", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Interaction` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Interaction` or `null` if not found.
+  """
+  interaction_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Interaction_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Interaction_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Interaction_Data!
+  ): Interaction_KeyOutput @fdc_generated(from: "Interaction", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Lead` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Lead` or `null` if not found.
+  """
+  lead_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Lead_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Lead_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Lead_Data!
+  ): Lead_KeyOutput @fdc_generated(from: "Lead", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `User` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `User` or `null` if not found.
+  """
+  user_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: User_Data!
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `VerificationScan` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `VerificationScan` or `null` if not found.
+  """
+  verificationScan_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: VerificationScan_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: VerificationScan_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: VerificationScan_Data!
+  ): VerificationScan_KeyOutput @fdc_generated(from: "VerificationScan", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update `Campaign` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  campaign_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Campaign_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Campaign_Data!
+  ): Int! @fdc_generated(from: "Campaign", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `CreatorProfile` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  creatorProfile_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: CreatorProfile_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: CreatorProfile_Data!
+  ): Int! @fdc_generated(from: "CreatorProfile", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Interaction` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  interaction_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Interaction_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Interaction_Data!
+  ): Int! @fdc_generated(from: "Interaction", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Lead` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  lead_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Lead_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Lead_Data!
+  ): Int! @fdc_generated(from: "Lead", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `User` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  user_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: User_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: User_Data!
+  ): Int! @fdc_generated(from: "User", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `VerificationScan` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  verificationScan_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: VerificationScan_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: VerificationScan_Data!
+  ): Int! @fdc_generated(from: "VerificationScan", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Delete a single `Campaign` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  campaign_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Campaign_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Campaign_FirstRow
+  ): Campaign_KeyOutput @fdc_generated(from: "Campaign", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `CreatorProfile` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  creatorProfile_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: CreatorProfile_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: CreatorProfile_FirstRow
+  ): CreatorProfile_KeyOutput @fdc_generated(from: "CreatorProfile", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Interaction` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  interaction_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Interaction_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Interaction_FirstRow
+  ): Interaction_KeyOutput @fdc_generated(from: "Interaction", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Lead` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  lead_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Lead_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Lead_FirstRow
+  ): Lead_KeyOutput @fdc_generated(from: "Lead", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `User` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  user_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `VerificationScan` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  verificationScan_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: VerificationScan_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: VerificationScan_FirstRow
+  ): VerificationScan_KeyOutput @fdc_generated(from: "VerificationScan", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete `Campaign` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  campaign_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Campaign_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Campaign", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `CreatorProfile` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  creatorProfile_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: CreatorProfile_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "CreatorProfile", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Interaction` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  interaction_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Interaction_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Interaction", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Lead` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  lead_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Lead_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Lead", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `User` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  user_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: User_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "User", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `VerificationScan` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  verificationScan_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: VerificationScan_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "VerificationScan", purpose: DELETE_MULTIPLE)
+}
