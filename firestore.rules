@@ -11,15 +11,15 @@ service cloud.firestore {
 
     // Admin-only collections
     match /influencers/{document=**} {
-      allow read, write: if request.auth != null && request.auth.token.email == 'fluency400533@gmail.com';
+      allow read, write: if request.auth != null && request.auth.token.admin == true;
     }
 
     match /campaigns/{document=**} {
       // Admin can do everything
-      allow create, delete: if request.auth != null && request.auth.token.email == 'fluency400533@gmail.com';
+      allow create, delete: if request.auth != null && request.auth.token.admin == true;
       
       // Admin can read/write
-      allow read: if request.auth != null && request.auth.token.email == 'fluency400533@gmail.com';
+      allow read: if request.auth != null && request.auth.token.admin == true;
       
       // Client Portal Access:
       // Allow READ if query filters by shareToken (handled by 'list' rule? No, 'get' rule).
@@ -37,7 +37,7 @@ service cloud.firestore {
       // Let's rely on the fact that the user has the link.
       // We will allow update if the resource has a 'shareToken' field and the user is NOT modifying it.
       // AND we might want to restrict WHICH fields they can update (status, clientNotes).
-      allow update: if (request.auth != null && request.auth.token.email == 'fluency400533@gmail.com') || 
+      allow update: if (request.auth != null && request.auth.token.admin == true) || 
                     (resource.data.shareToken != null && 
                      request.resource.data.shareToken == resource.data.shareToken &&
                      request.resource.data.diff(resource.data).affectedKeys().hasOnly(['influencers']));
