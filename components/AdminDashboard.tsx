@@ -17,11 +17,12 @@ import {
     getInitialCRMData, simulateAICaraChat, wingmanRewrite, wingmanAnalyze, wingmanQnA
 } from '../services/api';
 import { InfluencerHub } from './InfluencerHub';
+import { AIInfluencerSearch } from './AIInfluencerSearch';
 
 import { Creator, RiskReport, Lead, Campaign, Message, CRMField, AICaraMessage, Influencer } from '../types';
 
 // --- TYPES ---
-type Tool = 'dashboard' | 'detector' | 'matchmaker' | 'leads' | 'campaigns' | 'database' | 'inbox' | 'aicara' | 'wingman' | 'hub';
+type Tool = 'dashboard' | 'detector' | 'matchmaker' | 'leads' | 'campaigns' | 'database' | 'inbox' | 'aicara' | 'wingman' | 'hub' | 'ai-discovery';
 
 // --- MOCK DATA ---
 const mockCampaigns: Campaign[] = [
@@ -1287,6 +1288,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     <div className="pt-6 pb-2 px-4 text-xs font-bold text-stone-600 uppercase tracking-widest flex items-center gap-2 font-mono">
                         <Sparkles size={12} /> AI Tools
                     </div>
+                    <NavItem tool="ai-discovery" label="AI Discovery" icon={Search} extra={<span className="text-[9px] bg-fluency-neon text-black px-1.5 rounded ml-auto font-mono font-bold">NEW</span>} />
                     <NavItem tool="wingman" label="Wingman" icon={Sparkles} extra={<span className="text-[9px] bg-purple-900/50 text-purple-300 px-1.5 rounded ml-auto font-mono">Gemini</span>} />
                 </nav>
 
@@ -1381,6 +1383,12 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                                 campaigns={campaigns}
                                 setCampaigns={setCampaigns}
                                 onOpenClientPortal={onOpenClientPortal}
+                            />
+                        )}
+                        {activeTool === 'ai-discovery' && (
+                            <AIInfluencerSearch
+                                accessToken={process.env.REACT_APP_INSTAGRAM_ACCESS_TOKEN || ''}
+                                accountId={process.env.REACT_APP_INSTAGRAM_ACCOUNT_ID}
                             />
                         )}
 

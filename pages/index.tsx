@@ -56,8 +56,20 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="py-12 border-t border-stone-800 bg-[#0A0A0A]">
-        <div className="container mx-auto px-4 text-center text-stone-500">
-          <p>&copy; {new Date().getFullYear()} Fluency AIM Platform. All rights reserved.</p>
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-stone-500">
+              &copy; {new Date().getFullYear()} Fluency AIM Platform. All rights reserved.
+            </p>
+            <div className="flex gap-6">
+              <a href="/privacy-policy" className="text-stone-500 hover:text-purple-400 transition-colors text-sm">
+                Privacy Policy
+              </a>
+              <a href="/how-it-works" className="text-stone-500 hover:text-purple-400 transition-colors text-sm">
+                How It Works
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

@@ -1,0 +1,186 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "origin-when-cross-origin"
+        }
+      ],
+      "regex": "^(?:/(.*))(?:/)?$"
+    }
+  ],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/portal/[shareToken]",
+      "regex": "^/portal/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPshareToken": "nxtPshareToken"
+      },
+      "namedRegex": "^/portal/(?<nxtPshareToken>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/404",
+      "regex": "^/404(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/404(?:/)?$"
+    },
+    {
+      "page": "/500",
+      "regex": "^/500(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/500(?:/)?$"
+    },
+    {
+      "page": "/admin/calculator",
+      "regex": "^/admin/calculator(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/calculator(?:/)?$"
+    },
+    {
+      "page": "/admin/campaigns",
+      "regex": "^/admin/campaigns(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/campaigns(?:/)?$"
+    },
+    {
+      "page": "/admin/dashboard",
+      "regex": "^/admin/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/dashboard(?:/)?$"
+    },
+    {
+      "page": "/admin/influencers",
+      "regex": "^/admin/influencers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/influencers(?:/)?$"
+    },
+    {
+      "page": "/admin/legal-ai",
+      "regex": "^/admin/legal\\-ai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/legal\\-ai(?:/)?$"
+    },
+    {
+      "page": "/admin/login",
+      "regex": "^/admin/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/login(?:/)?$"
+    },
+    {
+      "page": "/api/ai/analyze-audience",
+      "regex": "^/api/ai/analyze\\-audience(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ai/analyze\\-audience(?:/)?$"
+    },
+    {
+      "page": "/api/ai/generate-contract",
+      "regex": "^/api/ai/generate\\-contract(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ai/generate\\-contract(?:/)?$"
+    },
+    {
+      "page": "/api/ai/match-creators",
+      "regex": "^/api/ai/match\\-creators(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ai/match\\-creators(?:/)?$"
+    },
+    {
+      "page": "/api/ai/predict-roi",
+      "regex": "^/api/ai/predict\\-roi(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ai/predict\\-roi(?:/)?$"
+    },
+    {
+      "page": "/api/ai/verify-creator",
+      "regex": "^/api/ai/verify\\-creator(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ai/verify\\-creator(?:/)?$"
+    },
+    {
+      "page": "/api/ai-discovery",
+      "regex": "^/api/ai\\-discovery(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ai\\-discovery(?:/)?$"
+    },
+    {
+      "page": "/api/instagram-analytics",
+      "regex": "^/api/instagram\\-analytics(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/instagram\\-analytics(?:/)?$"
+    },
+    {
+      "page": "/how-it-works",
+      "regex": "^/how\\-it\\-works(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/how\\-it\\-works(?:/)?$"
+    },
+    {
+      "page": "/instagram-analytics",
+      "regex": "^/instagram\\-analytics(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/instagram\\-analytics(?:/)?$"
+    },
+    {
+      "page": "/privacy-policy",
+      "regex": "^/privacy\\-policy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy\\-policy(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}
