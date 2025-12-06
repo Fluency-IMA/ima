@@ -3,6 +3,8 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getAnalytics, isSupported } from 'firebase/analytics';
 
+import { getStorage } from 'firebase/storage';
+
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -17,6 +19,7 @@ const firebaseConfig = {
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app);
 
 // Initialize Analytics only in browser environment
 let analytics = null;
@@ -24,4 +27,4 @@ if (typeof window !== 'undefined') {
     isSupported().then(yes => yes && (analytics = getAnalytics(app)));
 }
 
-export { app, auth, db, analytics };
+export { app, auth, db, analytics, storage };
