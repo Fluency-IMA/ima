@@ -1,25 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { db, storage } from '../../../../lib/firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { getAuth } from 'firebase-admin/auth';
-import { initializeApp, getApps, cert } from 'firebase-admin/app';
-
-import path from 'path';
-
-// Initialize Firebase Admin if not already initialized
-if (!getApps().length) {
-    try {
-        const serviceAccountPath = path.join(process.cwd(), 'service-account.json');
-        const serviceAccount = require(serviceAccountPath);
-        initializeApp({
-            credential: cert(serviceAccount),
-            storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
-        });
-    } catch (error) {
-        console.error('Firebase Admin initialization error:', error);
-    }
-}
+import { db, storage, auth } from '../../../../lib/firebase-admin';
+import { FieldValue } from 'firebase-admin/firestore';
 
 export default async function handler(
     req: NextApiRequest,
@@ -39,7 +20,7 @@ export default async function handler(
     let decodedToken;
 
     try {
-        decodedToken = await getAuth().verifyIdToken(token);
+        decodedToken = await auth.verifyIdToken(token);
     } catch (error) {
         return res.status(401).json({ error: 'Invalid token' });
     }
@@ -79,19 +60,27 @@ export default async function handler(
         const arrayBuffer = await response.arrayBuffer();
         const buffer = Buffer.from(arrayBuffer);
         const timestamp = Date.now();
-        const storageRef = ref(storage, `influencer-portfolios/${influencerId}/${timestamp}.jpg`);
+        const filePath = `influencer-portfolios/${influencerId}/${timestamp}.jpg`;
+        const bucket = storage.bucket();
+        const file = bucket.file(filePath);
 
-        const snapshot = await uploadBytes(storageRef, buffer, { contentType: 'image/jpeg' });
-        const downloadURL = await getDownloadURL(snapshot.ref);
-
-        const docRef = await addDoc(collection(db, 'influencer_portfolios'), {
-            influencerId,
-            originalPrompt: prompt,
-            imageUrl: downloadURL,
-            createdAt: serverTimestamp(),
+        await file.save(buffer, {
+            metadata: { contentType: 'image/jpeg' }
         });
 
-        return res.status(200).json({ success: true, id: docRef.id, imageUrl: downloadURL });
+        // Make the file public to get a URL
+        await file.makePublic();
+        const publicUrl = `https://storage.googleapis.com/${bucket.name}/${filePath}`;
+
+        // Add document to Firestore
+        const docRef = await db.collection('influencer_portfolios').add({
+            influencerId,
+            originalPrompt: prompt,
+            imageUrl: publicUrl,
+            createdAt: FieldValue.serverTimestamp(),
+        });
+
+        return res.status(200).json({ success: true, id: docRef.id, imageUrl: publicUrl });
 
     } catch (error) {
         console.error('Error saving portfolio item:', error);
