@@ -9,7 +9,7 @@
 
 import request from 'supertest';
 import express from 'express';
-import { createLeadEndpoint } from '../api/lead-capture';
+import { createLeadEndpoint } from '../lib/server/lead-capture';
 import { SecurityMonitor } from '../utils/security';
 
 // Mock dependencies
@@ -91,7 +91,7 @@ describe('Lead Capture API Endpoint', () => {
 
     test('should handle different valid industries', async () => {
       const industries = ['ecommerce', 'saas', 'cpg', 'fashion', 'tech', 'healthcare', 'finance', 'travel'];
-      
+
       for (const industry of industries) {
         const leadData = {
           ...validLeadData,
@@ -109,7 +109,7 @@ describe('Lead Capture API Endpoint', () => {
 
     test('should handle both brand and creator user types', async () => {
       const userTypes = ['brand', 'creator'];
-      
+
       for (const userType of userTypes) {
         const leadData = {
           ...validLeadData,
@@ -451,7 +451,7 @@ describe('Lead Capture API Endpoint', () => {
         .expect(201);
 
       expect(response.body.success).toBe(true);
-      
+
       // Verify security logging includes sanitized data
       expect(mockSecurityMonitor.logSecurityEvent).toHaveBeenCalledWith(
         'LEAD_CAPTURED',
