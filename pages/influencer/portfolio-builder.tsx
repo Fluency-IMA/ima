@@ -34,7 +34,12 @@ export default function PortfolioBuilder() {
     const loadPortfolio = async () => {
         if (!user) return;
         try {
-            const res = await fetch(`/api/influencer/portfolio/list?influencerId=${user.uid}`);
+            const token = await user.getIdToken();
+            const res = await fetch(`/api/influencer/portfolio/list?influencerId=${user.uid}`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
             const data = await res.json();
             if (data.portfolioItems) {
                 setPortfolioItems(data.portfolioItems);
@@ -55,9 +60,13 @@ export default function PortfolioBuilder() {
         setSelectedImage(null);
 
         try {
+            const token = await user.getIdToken();
             const res = await fetch('/api/influencer/portfolio/generate', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
                 body: JSON.stringify({ prompt }),
             });
             const data = await res.json();
