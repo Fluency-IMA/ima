@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { NanoBananaService } from '../../../services/nano-banana';
+import { NanoBananaService } from '../../../../services/nano-banana';
 
 export default async function handler(
     req: NextApiRequest,
@@ -11,8 +11,8 @@ export default async function handler(
 
     const { prompt } = req.body;
 
-    if (!prompt || typeof prompt !== 'string') {
-        return res.status(400).json({ error: 'Prompt is required and must be a string' });
+    if (!prompt || typeof prompt !== 'string' || prompt.length < 3) {
+        return res.status(400).json({ error: 'Prompt is required and must be at least 3 characters' });
     }
 
     try {

@@ -1,7 +1,7 @@
 import { NextApiRequest } from 'next';
 
-const ADMIN_EMAIL = 'fluency400533@gmail.com';
-const FIREBASE_API_KEY = process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
+const ADMIN_EMAIL = process.env.NEXT_PUBLIC_FIREBASE_ADMIN_EMAIL || 'fluency400533@gmail.com';
+const FIREBASE_ADMIN_API_KEY = process.env.FIREBASE_ADMIN_API_KEY;
 
 export async function verifyAdmin(req: NextApiRequest): Promise<boolean> {
     try {
@@ -13,7 +13,7 @@ export async function verifyAdmin(req: NextApiRequest): Promise<boolean> {
         const idToken = authHeader.split('Bearer ')[1];
 
         // Verify ID token using Firebase Auth REST API
-        const response = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${FIREBASE_API_KEY}`, {
+        const response = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${FIREBASE_ADMIN_API_KEY}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

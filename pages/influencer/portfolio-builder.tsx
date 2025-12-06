@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { Image as ImageIcon, Save, RefreshCw, Loader2, Sparkles } from 'lucide-react';
-
-// Mock Influencer ID for demonstration purposes
-// In a real app, this would come from the authenticated user context
-const DEMO_INFLUENCER_ID = 'inf_demo_123';
+import { useRouter } from 'next/router';
+import { Image as ImageIcon, Save, RefreshCw, Loader2, Sparkles, LogIn } from 'lucide-react';
+import { useAuth } from '../../context/AuthContext';
 
 interface PortfolioItem {
     id: string;
@@ -14,6 +12,9 @@ interface PortfolioItem {
 }
 
 export default function PortfolioBuilder() {
+    const { user, loading, loginWithGoogle } = useAuth();
+    const router = useRouter();
+
     const [prompt, setPrompt] = useState('');
     const [generatedImages, setGeneratedImages] = useState<string[]>([]);
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -23,12 +24,17 @@ export default function PortfolioBuilder() {
     const [loadingPortfolio, setLoadingPortfolio] = useState(true);
 
     useEffect(() => {
-        loadPortfolio();
-    }, []);
+        if (user) {
+            loadPortfolio();
+        } else if (!loading) {
+            setLoadingPortfolio(false);
+        }
+    }, [user, loading]);
 
     const loadPortfolio = async () => {
+        if (!user) return;
         try {
-            const res = await fetch(`/api/influencer/portfolio/list?influencerId=${DEMO_INFLUENCER_ID}`);
+            const res = await fetch(`/api/influencer/portfolio/list?influencerId=${user.uid}`);
             const data = await res.json();
             if (data.portfolioItems) {
                 setPortfolioItems(data.portfolioItems);
@@ -69,17 +75,23 @@ export default function PortfolioBuilder() {
     };
 
     const handleSave = async () => {
-        if (!selectedImage) return;
+        if (!selectedImage || !user) return;
 
         setIsSaving(true);
         try {
+            // Get ID token for authentication
+            const token = await user.getIdToken();
+
             const res = await fetch('/api/influencer/portfolio/save', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
                 body: JSON.stringify({
                     imageUrl: selectedImage,
                     prompt,
-                    influencerId: DEMO_INFLUENCER_ID
+                    influencerId: user.uid // Use real user ID
                 }),
             });
 
@@ -99,6 +111,35 @@ export default function PortfolioBuilder() {
             setIsSaving(false);
         }
     };
+
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-[#050505] flex items-center justify-center text-white">
+                <Loader2 className="animate-spin" size={32} />
+            </div>
+        );
+    }
+
+    if (!user) {
+        return (
+            <div className="min-h-screen bg-[#050505] flex items-center justify-center text-white p-4">
+                <div className="text-center space-y-6 max-w-md">
+                    <div className="bg-fluency-neon/10 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto">
+                        <Sparkles className="text-fluency-neon" size={40} />
+                    </div>
+                    <h1 className="text-3xl font-bold">Portfolio Builder</h1>
+                    <p className="text-stone-400">Sign in to start generating AI images for your portfolio.</p>
+                    <button
+                        onClick={loginWithGoogle}
+                        className="w-full py-3 bg-white text-black font-bold rounded-xl hover:bg-stone-200 transition-colors flex items-center justify-center gap-2"
+                    >
+                        <LogIn size={20} />
+                        Sign in with Google
+                    </button>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="min-h-screen bg-[#050505] text-white font-sans">
@@ -182,8 +223,8 @@ export default function PortfolioBuilder() {
                                                 key={idx}
                                                 onClick={() => setSelectedImage(url)}
                                                 className={`group relative aspect-[3/4] rounded-xl overflow-hidden cursor-pointer border-2 transition-all ${selectedImage === url
-                                                        ? 'border-fluency-neon shadow-[0_0_20px_rgba(204,255,0,0.3)]'
-                                                        : 'border-transparent hover:border-stone-700'
+                                                    ? 'border-fluency-neon shadow-[0_0_20px_rgba(204,255,0,0.3)]'
+                                                    : 'border-transparent hover:border-stone-700'
                                                     }`}
                                             >
                                                 <img

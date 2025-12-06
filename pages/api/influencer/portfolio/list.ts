@@ -21,6 +21,7 @@ export default async function handler(
             collection(db, 'influencer_portfolios'),
             where('influencerId', '==', influencerId),
             orderBy('createdAt', 'desc'),
+            // REQUIRES COMPOSITE INDEX: influencerId (ASC) + createdAt (DESC)
             limit(5)
         );
 
